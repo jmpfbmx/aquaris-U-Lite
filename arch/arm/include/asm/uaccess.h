@@ -57,9 +57,6 @@ extern int fixup_exception(struct pt_regs *regs);
  */
 static inline unsigned int uaccess_save_and_enable(void)
 {
-<<<<<<< HEAD
-	return 0;
-=======
 #ifdef CONFIG_CPU_SW_DOMAIN_PAN
 	unsigned int old_domain = get_domain();
 
@@ -71,18 +68,14 @@ static inline unsigned int uaccess_save_and_enable(void)
 #else
 	return 0;
 #endif
->>>>>>> 9b6e25ae29722408b6330761c7497b4bc23f1776
 }
 
 static inline void uaccess_restore(unsigned int flags)
 {
-<<<<<<< HEAD
-=======
 #ifdef CONFIG_CPU_SW_DOMAIN_PAN
 	/* Restore the user access mask */
 	set_domain(flags);
 #endif
->>>>>>> 9b6e25ae29722408b6330761c7497b4bc23f1776
 }
 
 /*
